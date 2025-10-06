@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Juego de dados</title>    
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body>
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Landing</a></li>
+          <li><a href="juego-cartas.html">Cartas</a></li>
+          <li><a href="juego-dados.html">Dados</a></li>
+          <li><a href="tabla-posiciones.html">Posiciones</a></li>
+          <li><a href="extra.html">Jorunna parva</a></li>
+          <li><a href="about-me.html">Sobre Mí</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+  <main class="contenedor-juego">
+    <h1>Juego de Dados</h1>
+
+    <img src="../media/dados.jpeg" alt="Dados" class="img-juego-cartas">
+
+
+        <!-- para los nombres -->
+    <div class="zona-nombre">
+    <label for="nombreJugador">Nombre del jugador:</label>
+    <input type="text" id="nombreJugador" placeholder="Escribí tu nombre">
+    <button id="btnGuardarNombre">Guardar</button>
+    </div>
+
+    <!-- Marcadores -->
+    <div class="marcadores-dados">
+      <p><strong>Jugador:</strong> <span id="puntosJugador">0</span> pts</p>
+      <p><strong>Computadora:</strong> <span id="puntosComputadora">0</span> pts</p>
+    </div>
+
+    <!-- Rondas ganadas -->
+    <div class="ronda-dados">
+      <p><strong>Victorias Jugador:</strong> <span id="victoriasJugador">0</span></p>
+      <p><strong>Victorias Computadora:</strong> <span id="victoriasComputadora">0</span></p>
+    </div>
+
+    <!-- Resultado de los dados -->
+    <div class="resultado-dados" id="zonaDados">
+      <!-- Aquí se mostrarán los dados tirados -->
+    </div>
+
+    <!-- Mensajes del juego -->
+    <div class="mensaje-dados" id="mensajeJuego">
+      Pulsa <strong>"Comenzar"</strong> para iniciar la partida.
+    </div>
+
+    <!-- Botones de control -->
+    <div class="botones-dados">
+      <button id="btnComenzar">Comenzar</button>
+      <button id="btnTirarDados" disabled>Tirar Dados</button>
+      <button id="btnDadoExtra" disabled>Tirar Dado Extra</button>
+      <button id="btnPasar" disabled>Pasar</button>
+      <button id="btnReiniciar" disabled>Jugar de Nuevo</button>
+    </div>
+  </main>
+
+
+
+
+
+
+
+  
+<footer class="footer-sim"> 
+  <p>🐇🐇🐇</p>
+</footer>
+
+
+<script src="../js/dados.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,485 @@
+html, body {
+  background-color: rgb(87, 68, 190);
+  background-size: auto;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+}
+
+/* ─── Nav ───────────────────────────── */
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  background: #000000;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 0.7rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  display: block;
+}
+
+nav a:hover {
+  text-shadow: 0 0 0.3rem ivory, 0 0 0.7rem ivory, 0 0 1rem #f5f5dc;
+}
+
+/* Global - nombres */
+
+.zona-nombre {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.zona-nombre input {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+}
+
+
+/* ─── Contenedor principal (centrado) ───────────────────────── */
+
+.contenedor-todo {
+  max-width: 60rem; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* ─── Juego de cartas ───────────────────────────── */
+.zona-juego {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.jugador, .computadora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cartas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.carta {
+  border: 0.15rem solid #333;
+  border-radius: 0.5rem;
+  background: linear-gradient(145deg, #fff, #f2f2f2);
+  padding: 1em;
+  width: 5.5em;
+  height: 7.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #000;
+  box-shadow: 0 0.3rem 0.8rem rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-carta {
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-size: 1rem;
+  border: none;
+}
+
+.btn-carta:hover:not(:disabled) {
+  background-color: #ffefcc;
+  transform: scale(1.05);
+}
+
+.btn-carta:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Controles y puntajes ───────────────────────────── */
+.zona-controles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.botones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.zona-puntajes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+
+/* ─── Imagen del juego ───────────────────────────── */
+.img-juego-cartas {
+  max-width: 20rem;
+  height: auto;
+  margin: 1.5rem auto;
+  display: block;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+}
+
+
+
+
+/* ─── dados ───────────────────────────── */
+
+
+.contenedor-juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  color: #fff;
+  max-width: 60rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 0.5rem #000;
+}
+
+/* Marcadores y Ronda */
+.marcadores-dados, .ronda-dados {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(145deg, #fff, #f2f2f2);
+  color: #000;
+  padding: 0.8rem 2rem;
+  border-radius: 0.8rem;
+  margin: 0.8rem 0;
+  width: 90%;
+  max-width: 25rem;
+  font-weight: bold;
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+/* Zona donde aparecen los dados */
+.resultado-dados {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  background: linear-gradient(145deg, #fff, #f2f2f2);
+  color: #000;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.15rem solid #333;
+  min-height: 5rem;
+  margin-top: 1rem;
+  width: 90%;
+  max-width: 25rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0,0,0,0.3);
+}
+
+/* Cada dado como si fuera una carta */
+.dado {
+  border: 0.15rem solid #333;
+  border-radius: 0.5rem;
+  background: linear-gradient(145deg, #fff, #f2f2f2);
+  width: 5em;
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #000;
+  box-shadow: 0 0.3rem 0.8rem rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.dado:hover {
+  background-color: #ffefcc;
+  transform: scale(1.05);
+}
+
+/* Mensajes */
+.mensaje-dados {
+  background: rgba(255,255,255,0.1);
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  max-width: 25rem;
+  text-align: center;
+  box-shadow: 0 0.4rem 0.8rem rgba(0,0,0,0.3);
+}
+
+/* Botones con estética del juego de cartas */
+.botones-dados {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.botones-dados button {
+  background-color: #333;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botones-dados button:hover:not(:disabled) {
+  background-color: #ffefcc;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.botones-dados button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+/* puntuaciones */ 
+
+.contenedor-puntuaciones {
+  max-width: 50rem;
+  margin: 2em auto;
+  padding: 1.5em;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+  text-align: center;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 1.5em;
+}
+
+.lista-puntuaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.tarjeta-puntuacion {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0.8em;
+  padding: 1em 1.5em;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 40rem;
+  text-align: left;
+  color: white;
+}
+
+.tarjeta-puntuacion .jugador {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.tarjeta-puntuacion .juego {
+  text-transform: capitalize;
+}
+
+.tarjeta-puntuacion .puntos {
+  text-align: right;
+  font-weight: bold;
+  color: gold;
+}
+
+.tarjeta-puntuacion .fecha {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.mensaje {
+  color: #ccc;
+  font-style: italic;
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+/* Conejitos  */
+
+.conejo1-main {
+  max-width: 60rem;
+  margin: 2em auto;
+  padding: 1.5em;
+  background-color: #1c1c1c;
+  border: 0.1em solid #065e4c33;
+  border-radius: 1em;
+  box-shadow: 0 0 1em rgba(0,255,204,0.2);
+}
+
+.conejo1-section h2 {
+  color: #00ffcc;
+  border-bottom: 0.1em solid #01a08059;
+  padding-bottom: 0.2em;
+}
+
+
+section p {
+  color:#ddd;
+}
+
+section ul li {
+  text-decoration: none;
+}
+
+.color {
+    color: #00ffcc;
+}
+
+.fofis{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#chikito {
+  width: 35%;
+}
+
+#chikito1 {
+  width: 15%;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+.cancion {
+  background: rgba(58, 58, 58, 0.959);
+  padding: 1em;
+  width: 20em;
+  border-radius: 10px;
+  text-align: center;
+  color: aliceblue;
+}
+
+
+
+/* ─── Footer ───────────────────────────── */
+.footer-sim {
+  width: 100%; /* ocupa todo el ancho */
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+  box-sizing: border-box;
+}
+
+
+
+/* ─── Media Query ───────────────────────────── */
+@media (max-width: 800px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-juego-cartas {
+    max-width: 15rem;
+  }
+
+  .zona-juego {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #chikito {
+  width: 50%;
+}
+}

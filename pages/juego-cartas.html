@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Juego de Cartas</title>    
+
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+
+<body>
+
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Landing</a></li>
+          <li><a href="juego-cartas.html">Cartas</a></li>
+          <li><a href="juego-dados.html">Dados</a></li>
+          <li><a href="tabla-posiciones.html">Posiciones</a></li>
+          <li><a href="extra.html">Jorunna parva</a></li>
+          <li><a href="about-me.html">Sobre Mí</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <main class="contenedor-todo">
+    <h1>Juego de Pares</h1>
+
+        <img src="../media/cartas.png" alt="img cartas" class="img-juego-cartas">
+      
+    <!-- para los nombres -->
+    <div class="zona-nombre">
+    <label for="nombreJugador">Nombre del jugador:</label>
+    <input type="text" id="nombreJugador" placeholder="Escribí tu nombre">
+    <button id="btnGuardarNombre">Guardar</button>                                <!--id nombre acá-->
+    </div>
+
+    <!-- zona de juego-->
+    <section class="zona-juego">
+      <div class="jugador">
+        <h2>Tus cartas</h2>
+        <div id="cartas-jugador" class="cartas"></div>
+      </div>
+
+      <div class="computadora">
+        <h2>Computadora</h2>
+        <div id="cartas-computadora" class="cartas"></div>
+      </div>
+    </section>
+
+    <!--botones-->
+    <section class="zona-controles">
+      <p id="mensaje">Presiona "Nueva ronda" para comenzar</p>
+      <div class="botones">
+        <button id="btn-nueva-ronda">Nueva ronda</button>
+        <button id="btn-descartar" disabled>Descartar carta</button>
+        <button id="btn-reiniciar" style="display:none;">Jugar de nuevo</button>
+      </div>
+    </section>
+
+    <!--puntuacion-->
+
+    <section class="zona-puntajes">
+      <p>Jugador: <span id="puntaje-jugador">0</span> | Computadora: <span id="puntaje-computadora">0</span></p>
+      <div>
+        <h3>Descarte</h3>
+        <div id="carta-descartada"></div>
+      </div>
+
+    </section>
+  </main>
+
+<footer class="footer-sim"> 
+  <p>🐇🐇🐇</p>
+</footer>
+
+
+<script src="../js/cartas.js"></script>
+
+</body>
+</html>
